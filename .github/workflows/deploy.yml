@@ -36,8 +36,10 @@ jobs:
           node-version: lts/*
           cache: 'npm'
       - name: Install dependencies
+        working-directory: trackermax-ui
         run: npm ci
       - name: Build
+        working-directory: trackermax-ui
         run: npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v6
