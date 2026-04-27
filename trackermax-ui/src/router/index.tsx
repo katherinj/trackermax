@@ -13,36 +13,39 @@ import Settings from "../features/settings/Settings";
 import LandingPage from "../features/landing/LandingPage";
 import NotFound from "../components/NotFound";
 
-export const router = createBrowserRouter([
-  {
-    element: <RootLayout />,
-    children: [
-      { index: true, element: <LandingPage /> },
+export const router = createBrowserRouter(
+  [
+    {
+      element: <RootLayout />,
+      children: [
+        { index: true, element: <LandingPage /> },
 
-      // auth routes — redirect away if already logged in
-      {
-        element: <AuthLayout />,
-        loader: redirectIfAuthed,
-        children: [
-          { path: "login", element: <LoginPage /> },
-          { path: "register", element: <RegisterPage /> },
-        ],
-      },
+        // auth routes — redirect away if already logged in
+        {
+          element: <AuthLayout />,
+          loader: redirectIfAuthed,
+          children: [
+            { path: "login", element: <LoginPage /> },
+            { path: "register", element: <RegisterPage /> },
+          ],
+        },
 
-      // protected routes
-      {
-        loader: requireAuth,
-        children: [
-          { path: "dashboard", element: <Dashboard /> },
-          { path: "tickets", element: <TicketsPage /> },
-          { path: "projects", element: <ProjectsPage /> },
-          { path: "teams", element: <TeamsPage /> },
-          { path: "profile", element: <UserProfile /> },
-          { path: "settings", element: <Settings /> },
-        ],
-      },
+        // protected routes
+        {
+          loader: requireAuth,
+          children: [
+            { path: "dashboard", element: <Dashboard /> },
+            { path: "tickets", element: <TicketsPage /> },
+            { path: "projects", element: <ProjectsPage /> },
+            { path: "teams", element: <TeamsPage /> },
+            { path: "profile", element: <UserProfile /> },
+            { path: "settings", element: <Settings /> },
+          ],
+        },
 
-      { path: "*", element: <NotFound /> },
-    ],
-  },
-]);
+        { path: "*", element: <NotFound /> },
+      ],
+    },
+  ],
+  { basename: "/trackermax/" },
+);

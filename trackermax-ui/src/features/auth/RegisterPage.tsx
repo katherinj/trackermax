@@ -102,34 +102,6 @@ export default function RegisterPage() {
             minutes.
           </Typography>
         </Box>
-        <Box sx={{ display: "flex", gap: 4 }}>
-          {[
-            ["2.4k", "Tickets closed"],
-            ["98%", "Uptime"],
-            ["340+", "Teams"],
-          ].map(([num, label]) => (
-            <Box
-              key={label}
-              sx={{ borderTop: "1px solid rgba(255,255,255,0.15)", pt: 1.5 }}
-            >
-              <Typography
-                sx={{ color: "#778fd3", fontWeight: 700, fontSize: 22 }}
-              >
-                {num}
-              </Typography>
-              <Typography
-                sx={{
-                  color: "rgba(255,255,255,0.4)",
-                  fontSize: 11,
-                  textTransform: "uppercase",
-                  letterSpacing: 0.5,
-                }}
-              >
-                {label}
-              </Typography>
-            </Box>
-          ))}
-        </Box>
       </Box>
 
       {/* Right panel — form */}
