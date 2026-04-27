@@ -185,31 +185,7 @@ export default function LandingPage() {
             mt: 8,
             flexWrap: "wrap",
           }}
-        >
-          {[
-            ["2.4k+", "Tickets closed"],
-            ["98%", "Uptime"],
-            ["340+", "Teams"],
-          ].map(([num, label]) => (
-            <Box key={label} sx={{ textAlign: "center" }}>
-              <Typography
-                sx={{ fontSize: 28, fontWeight: 800, color: "#778fd3" }}
-              >
-                {num}
-              </Typography>
-              <Typography
-                sx={{
-                  fontSize: 12,
-                  color: "rgba(255,255,255,0.4)",
-                  textTransform: "uppercase",
-                  letterSpacing: 0.5,
-                }}
-              >
-                {label}
-              </Typography>
-            </Box>
-          ))}
-        </Box>
+        ></Box>
       </Box>
 
       {/* Features */}
