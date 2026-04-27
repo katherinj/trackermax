@@ -13,7 +13,12 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT ?? 3000;
 
-app.use(cors({ origin: "http://localhost:5173" }));
+app.use(
+  cors({
+    origin: ["http://localhost:5173", "https://katherinj.github.io"],
+    credentials: true,
+  }),
+);
 app.use(express.json());
 app.use("/auth", authRouter);
 app.use("/projects", projectsRouter);
